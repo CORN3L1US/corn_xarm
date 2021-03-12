@@ -13,16 +13,14 @@ emote = false
 Citizen.CreateThread(function ()
     while true do
         Citizen.Wait(1)
-        local player = GetPlayerPed(-1)
         if IsControlJustReleased(1, 74) then
             if emote == false then
-                    loadAnimDict("amb@world_human_hang_out_street@male_c@base")
-                    TaskPlayAnim(player, "amb@world_human_hang_out_street@male_c@base", "base", -1, -1, -1, 50, 0, false, false, false)
-              emote = true
-                elseif emote == true then 
-                    ClearPedTasks(player)
-                     emote = false
-                end
+                 loadAnimDict("amb@world_human_hang_out_street@male_c@base")
+                 TaskPlayAnim(GetPlayerPed(-1), "amb@world_human_hang_out_street@male_c@base", "base", -1, -1, -1, 50, 0, false, false, false)
+                emote = true
+            else 
+                ClearPedTasks(GetPlayerPed(-1))
+                emote = false
             end
         end
     end
@@ -34,5 +32,7 @@ function loadAnimDict(dict)
         Citizen.Wait(5)
     end
 end
+
+
 
 
