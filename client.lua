@@ -22,6 +22,7 @@ Citizen.CreateThread(function ()
             else 
                 ClearPedTasks(player)
                 emote = false
+                Citizen.Wait(200)
             end
         end
     end
