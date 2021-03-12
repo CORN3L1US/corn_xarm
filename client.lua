@@ -10,7 +10,7 @@ ________________________________________________________________________________
 
 emote = false
 
-Citizen.CreateThread(function ()
+Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
         local player = GetPlayerPed(-1)
